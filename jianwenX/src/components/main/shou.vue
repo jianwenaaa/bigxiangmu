@@ -53,11 +53,14 @@ export default {
     .main{
         width:98%;
         margin-top:.4rem;
+        position: relative;
     }
     .right{
         width:300px;
         height:1000px;
-        float:right;
+        position: absolute;
+        right:0;
+        top:.3rem;
         border-radius:.1rem;
         background:#fff7b5;
     }
