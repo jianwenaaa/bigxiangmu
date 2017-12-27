@@ -2,21 +2,23 @@
   <div class='box'>
       <h2>
         <span>个人博客</span>
-        <span>账号:王建文</span>
+        <span>
+            <router-link :to="{ path: '/number1' }" tag='el-button' >首页</router-link>
+            <router-link :to="{ path: '/jishu' }"  tag='el-button'>前端</router-link>
+            <router-link :to="{ path: '/bawei' }"  tag='el-button'>运维</router-link>
+            <router-link :to="{ path: '/houtai' }" tag='el-button'>留言板</router-link>
+        </span>
       </h2>
+      <img src="../../assets/beijing.jpg" alt="">
+      
       <div class="main">
-        <el-breadcrumb separator-class="el-icon-arrow-right" class='nav'>
-            <el-breadcrumb-item :to="{ path: '/number1' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item  :to="{ path: '/jishu' }">技术</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/bawei' }">八维</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/houtai' }">后台</el-breadcrumb-item>
-        </el-breadcrumb>
+         
       <router-view />
       <div class='right'>
                     <h3>全站搜索</h3>
                     <p>
                         <el-input v-model="input" placeholder="请输入内容" class='ipt' size="small"></el-input> 
-                        <el-button type="primary" size="small"  @click='click()'>搜索</el-button>
+                        <el-button type="primary" size="small"  @click='click()' class='btn'>搜索</el-button>
                     </p>
                    <h3>点击排行</h3>
                     <ol>
@@ -118,21 +120,22 @@ export default {
         justify-content:space-between;
         padding:0 .1rem;
     }
-    .nav{
-        margin-bottom:.2rem;
-        margin-left:.2rem;
+    button{
+        border-radius:0;
+        height:.35rem;
+        
     }
     .main{
         width:98%;
-        margin-top:.4rem;
+        margin-top:.2rem;
         position: relative;
     }
     .right{
         width:3rem;
-        height:3.5rem;
+        height:3.9rem;
         position: absolute;
         right:0;
-        top:.3rem;
+        top:0;
         border-radius:.1rem;
         background:#fff7b5;
         padding-top:.1rem;
@@ -148,6 +151,7 @@ export default {
         margin-left:.2rem;
         height:.15rem;
         line-height:.15rem;
+        margin-top:;
     }
     .right p .ipt{
         width:2rem;
@@ -160,7 +164,7 @@ export default {
 
      ol li{
        display:flex;
-       line-height:.3rem;
+       line-height:.4rem;
        justify-content: space-between;
        padding:0 .3rem;
     }
@@ -184,5 +188,14 @@ export default {
          display:inline-block;
          text-align: center;
          line-height: .2rem;
+     }
+     .btn{
+         border-radius:.05rem;
+         height:.3rem;
+     }
+     img{
+         height:3rem;
+         width:100%;
+         margin-top:.1rem;
      }
 </style>
