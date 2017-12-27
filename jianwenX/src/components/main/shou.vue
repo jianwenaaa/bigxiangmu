@@ -2,7 +2,7 @@
   <div class='box'>
       <h2>
         <span>个人博客</span>
-        <span>当前登录账号:{{this.$route.params.name}}</span>
+        <span>账号:王建文</span>
       </h2>
       <div class="main">
         <el-breadcrumb separator-class="el-icon-arrow-right" class='nav'>
@@ -16,7 +16,7 @@
                     <h3>全站搜索</h3>
                     <p>
                         <el-input v-model="input" placeholder="请输入内容" class='ipt' size="small"></el-input> 
-                        <el-button type="primary" size="small">搜索</el-button>
+                        <el-button type="primary" size="small"  @click='click()'>搜索</el-button>
                     </p>
                    <h3>点击排行</h3>
                     <ol>
@@ -87,7 +87,24 @@ export default {
         return {
             input:'',
             activeName: '',
+            val:'',
+            newdata:''
         }
+    },
+    methods:{
+        click:function(){
+            console.log(this.input)
+            // for(let i=0;i<this.val.length;i++){
+            //     if(this.input == this.val[i]['name']){
+                    
+            //     }
+            // }
+        },
+    },
+     created(){
+        bus.$on('name',(val)=>{  
+            this.val = val;
+        });
     },
 }
 </script>

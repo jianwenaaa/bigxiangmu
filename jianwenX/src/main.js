@@ -11,8 +11,9 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './init/css/font-awesome.min.css'
 import './mock/index.js'
+import bus from './plugin/bus';
 Vue.use(ElementUI)
-
+Vue.use(bus)
 Vue.use(MintUI)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;

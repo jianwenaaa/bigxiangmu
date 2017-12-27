@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     click:function(){
-      this.$router.push({name:"shou",params:{name:this.passname}})
+      this.$router.push({name:"number1",params:{name:this.passname}})
     }
   },
     created(){
