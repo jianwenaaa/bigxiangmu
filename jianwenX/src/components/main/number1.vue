@@ -1,32 +1,34 @@
 <template>
   <div>
     <el-table
-      :data="tableData"
+      :data="item" 
+      height="400"
       border
       style="width: 65%"
+
       class='tab'>
       <el-table-column
-        prop="date"
+        prop="id"
         label="标题"
         width="180">
       </el-table-column>
       <el-table-column
-        prop="name"
+        prop="sex"
         label="分类"
         width="180">
       </el-table-column>
       <el-table-column
-        prop="address"
+        prop="name"
         label="作者">
       </el-table-column>
       <el-table-column
-        prop="date"
+        prop="tel"
         label="发布时间">
       </el-table-column>
     </el-table>
 
     <div class="block blocks">
-      <el-pagination
+      <el-pagination @current-change="Pagingjump"
         layout="prev, pager, next"
         :total="50">
       </el-pagination>
@@ -37,40 +39,32 @@
 
 <script>
 export default {
+  
     data() {
       return {
-        tableData: [{
-          date: '2016-05-02',
-          name: '技术',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '八维',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '八维',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '技术',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }, {
-          date: '2016-05-03',
-          name: '技术',
-          address: '上海市普陀区金沙江路 1516 弄'
-        },{
-          date: '2016-05-03',
-          name: '技术',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }],
-        input:''
+        input:'',
+        item:[]
       }
     },
     methods:{
-
+       Pagingjump(page){
+            this.$http({
+                 url:'/page',
+                 method:'get',
+                 pageSize:page,
+            }).then(res=>{
+               this.item = res.data      
+            })
+        }
     },
      created(){
+         this.$http({
+           url:'/page',
+           method:'get',
+            pageSize:1,
+         }).then((res)=>{
+           this.item = res.data         
+         })
          bus.$emit('name',this.tableData)
     },
 }
