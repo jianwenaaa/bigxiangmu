@@ -10,7 +10,6 @@
         </span>
       </h2>
       <img src="../../assets/beijing.jpg" alt="">
-      
       <div class="main">
          
       <router-view />
@@ -79,11 +78,12 @@
                         </ol>
             </div>
       </div>
-      
+      <myfooter></myfooter>
   </div>
 </template>
 
 <script>
+ import myfooter from './myfooter.vue'
 export default {
     data(){
         return {
@@ -102,6 +102,9 @@ export default {
             //     }
             // }
         },
+    },
+    components:{
+        myfooter
     },
      created(){
         bus.$on('name',(val)=>{  

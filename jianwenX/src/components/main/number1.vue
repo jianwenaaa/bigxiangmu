@@ -59,12 +59,16 @@ export default {
           date: '2016-05-03',
           name: '技术',
           address: '上海市普陀区金沙江路 1516 弄'
-        },],
+        },{
+          date: '2016-05-03',
+          name: '技术',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }],
         input:''
       }
     },
     methods:{
-      
+
     },
      created(){
          bus.$emit('name',this.tableData)
@@ -74,9 +78,10 @@ export default {
 
 <style>
     .tab{
-        margin-left:.2rem;
+        margin-left:1.5rem;
     }
     .blocks{
-      margin-left:2.5rem;
+      margin-left:4rem;
+      margin-top:.4rem;
     }
 </style>
