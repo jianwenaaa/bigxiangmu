@@ -78,7 +78,7 @@ export default {
          dialogVisible: false,
          id:""
       };
-    }
+ }
 }
 </script>
 

@@ -31,10 +31,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main{
-  overflow: hidden
+  overflow: hidden;
 }
 .main .left{
-  float: left
+  float: lefts
 }
 .main .right{
   float: left;
